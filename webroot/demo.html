@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Chat AI Assistant DEMO</title>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+        <link rel="shortcut icon" href="favicon.ico">
+    
+        <link rel="stylesheet" href="flat-ui/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="flat-ui/css/flat-ui.css">
+        
+        <!-- Using only with Flat-UI (free)-->
+        <link rel="stylesheet" href="common-files/css/icon-font.css">
+
+        <link rel="stylesheet" href="common-files/css/animations.css">
+        
+        <!-- If you don't use any of these blocks just remove unnecessary CSS files -->
+        <!-- blog -->
+        <link rel="stylesheet" href="ui-kit/ui-kit-blog/css/style.css">
+        <!-- contacts -->
+        <link rel="stylesheet" href="ui-kit/ui-kit-contacts/css/style.css">
+        <!-- content -->
+        <link rel="stylesheet" href="ui-kit/ui-kit-content/css/style.css">
+        <!-- crew -->
+        <!-- 
+        <link rel="stylesheet" href="/ui-kit/ui-kit-crew/css/style.css">
+         -->
+        <!-- footer -->
+        <link rel="stylesheet" href="ui-kit/ui-kit-footer/css/style.css">
+        <!-- header -->
+        <link rel="stylesheet" href="ui-kit/ui-kit-header/css/style.css">
+        <!-- price -->
+        <link rel="stylesheet" href="ui-kit/ui-kit-price/css/style.css">
+        <!-- projects -->
+        <!-- 
+        <link rel="stylesheet" href="/ui-kit/ui-kit-projects/css/style.css">
+         -->
+
+        <link rel="stylesheet" href="css/style.css">
+        
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VBXT5RXRV2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VBXT5RXRV2');
+</script>        
+	
+<script type="text/javascript" src="common-files/js/jquery-1.10.2.min.js"></script>
+		        
+<style> body { margin: 0; } </style>
+
+<style>
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+        
+</style>          
+              
+</head>
+
+<body>
+       
+<script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.js"></script>
+    
+<script src="https://cdn.jsdelivr.net/npm/@ricky0123/vad-web@0.0.7/dist/bundle.min.js"></script>
+
+    
+<script>
+    
+window.global = window;
+var parcelRequire;
+    
+</script>    
+    
+<script type="module" src="js/index.js">
+</script>    
+    
+<div class="page-wrapper">   
+
+    <a name="demo"></a>
+            
+    <header class="header-1">
+        <div class="container">
+        <div class="row">
+        <div class="navbar col-sm-12 navbar-fixed-top" role="navigation">
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle"></button>
+        <a class="brand" target=_blank href="https://www.chat.ai">
+        <img src="img/chat-ai-logo-white-transparent.png" style="height: 50px;" alt="">
+        </a>
+        </div>
+        <div class="navbar-collapse collapse">
+        <ul class="nav pull-right">
+        <li>
+        <a target=_blank href="https://www.chat.ai">HOME</a>
+        </li>
+                                                  
+        <li>
+        <a href="#demo">DEMO</a>
+        </li>
+           
+        <li>
+        <a href="#contact">CONTACT</a>
+        </li>
+         
+        </ul>
+            
+        <ul class="subnav">
+               
+        </ul>
+        </div>
+        </div>
+        </div>
+        </div>
+    </header>
+      
+    <!-- needed for top menu to be overtop content -->    
+    <section class="header-1-sub bg-midnight-blue" style="height: 0px">
+        
+    <div id="pt-main" class="page-transitions pt-perspective">
+            
+    <div class="background">&nbsp;</div>
+    <div class="container" style="padding-top: 165px;">
+    <div class="row">
+              
+    <div class="col-md-12" align="center">
+        <h3>&nbsp;</h3>
+        <p></p><br>              
+    </div> 
+    </div>
+    </div>
+    </div>
+    </section>
+          
+    <section class="content-21 bg-midnight-blue">
+    
+    <div class="container">
+        
+    <h2>Assistant DEMO</h2>
+        
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+        <div class="features features-tabs">
+            
+        <div class="features-header">
+            
+        <div class="box active">
+            <div class="fui-bubble"></div>
+            Chat with A.I. Assistant
+        </div>
+            
+        </div>
+            
+        <div class="features-bodies">
+            
+        <div class="features-body active">
+            <h6>Chat with the A.I. Assistant</h6>
+            
+            <div align="center">
+                <h6>Listen &amp; Speak On/Off</h6>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+           
+            <p>Chat with powerful A.I. models.
+            </p>           
+                   
+            <p><br><br>
+            </p>   
+                
+            </div>
+                
+        </div>
+
+        </div>
+        </div>
+        </div>
+    </div>
+    </div>
+    </section>        
+      
+<section class="content-36 bg-midnight-blue">
+    <div class="container">
+    &nbsp;
+    </div>
+</section>
+            
+<a name="about"></a>
+        
+<section class="content-6 v-center">
+    <div>
+        <div class="container">
+            <h3><img src="img/chat_ai_logo_black_transparent.png" width="300" alt="">Chat.AI is a service of Vital.AI which utilizes the Haley.AI platform.</h3>
+            
+            <div class="row features">
+                <div class="col-sm-4 col-sm-offset-2">
+                    <h6>Chat.ai</h6>
+                    <p>Chat.ai provides end users, such as yourself, access to A.I. Assistants and A.I. Automation.</p>
+                </div>
+                <div class="col-sm-4 col-sm-offset-1">
+                    <h6>Haley.ai</h6>
+                    <p>Haley.ai is a platform for creating applications using A.I. Information is available at: <a target=_blank href=https://www.haley.ai> <font color="#46a5e4">https://www.haley.ai</font></a></p>
+                </div>
+            </div>
+            <div class="row features">
+                <div class="col-sm-4 col-sm-offset-2">
+                    <h6>Vital.ai</h6>
+                    <p>Vital.ai is the developer of the Haley.ai platform and operates Chat.ai.   Information is available at: <a target=_blank href=https://www.vital.ai> <font color="#46a5e4">https://www.vital.ai</font></a></p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>            
+      
+<a name="contact"></a>
+          
+      <section class="contacts-2">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8">
+              <h3>Contact Us</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+                <h6>Get in touch:</h6>
+                <div class="links">
+                    <a href="tel:1-917-463-4776"><span class="fui-phone"></span>1.917.463.4776</a><br>
+                    <a href="mailto:info@vital.ai"><span class="fui-mail"></span>info@vital.ai</a><br>
+                    <a target="_blank" href="http://vital.ai"><span class="fui-link"></span>http://vital.ai</a><br>
+                    <a target="_blank" href="https://blog.vital.ai"><span class="fui-link"></span>Blog https://blog.vital.ai</a>
+                </div>
+            </div>
+            <div class="col-sm-5 col-sm-offset-1">
+              <h6>We are located at:</h6>
+              <p>155 Water Street<br>
+                Brooklyn, NY 11201</p>
+              <div class="map">
+                  
+                <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.667899926605!2d-73.9878342!3d40.7033112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a33ceef3e5b%3A0x534e94c597a146f7!2s155%20Water%20St%2C%20Brooklyn%2C%20NY%2011201!5e0!3m2!1sen!2sus!4v1670877100950!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  
+                                    
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+	<footer class="footer-10">
+    	<div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+            	
+            	<nav>
+            		<h6>Chat AI</h6>
+            		<ul>
+            			<li><a target=_blank href="https://www.chat.ai">Home</a></li>
+                        <li><a href="#demo">DEMO</a></li>
+            			<li><a href="#contact">Contact</a></li>
+            			
+            		</ul>
+            	</nav>
+            </div>
+            <div class="col-sm-3 col-sm-offset-1">
+                <nav>
+                    <h6>Haley AI</h6>
+                    <ul>
+                        <li><a target="_blank" href="https://www.haley.ai/">Haley.ai</a></li>  
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="col-sm-3 col-sm-offset-2">
+                <nav>
+                    <h6>Vital AI</h6>
+                    <ul>
+                        <li><a target="_blank" href="https://www.vital.ai/">Vital.ai</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div>
+            
+        <div style="text-align: center;"> Copyright © 2024 Vital AI, LLC </div>
+ 
+    </div>
+    
+</footer>
+        
+</div>
+          
+    <script src="flat-ui/js/bootstrap.min.js"></script>
+    <script src="common-files/js/modernizr.custom.js"></script>
+    <script src="common-files/js/page-transitions.js"></script>
+    <script src="common-files/js/jquery.backgroundvideo.min.js"></script>
+    <script src="common-files/js/froogaloop.min.js"></script>
+    <script src="common-files/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+    <script src="common-files/js/startup-kit.js"></script>
+    
+  </body>
+</html>

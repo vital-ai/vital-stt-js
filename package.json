@@ -1,0 +1,35 @@
+{
+    "name": "@vital-ai/vital-sst-js",
+    "version": "0.1.0",
+    "description": "Vital Speech To Text JS",
+    "author": "Marc Hadfield",
+    "keywords": [
+        "speech-to-text"
+    ],
+    "module": "dist/vitalSpeechToText.min.js",
+    "scripts": {
+        "build": "parcel build src/vitalspeechtotext.js --log-level 4 --no-cache --no-source-maps detailed-report --out-file vitalSpeechToText.min.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vital-ai/vital-stt-js.git"
+    },
+    "license": "",
+    "bugs": {
+        "url": "https://github.com/vital-ai/vital-stt-js/issues"
+    },
+    "homepage": "https://github.com/vital-ai/vital-stt-js",
+    "dependencies": {
+        "@ricky0123/vad-web": "0.0.7",
+        "@xenova/transformers": "2.16.1",
+        "onnxruntime-web": "^1.10.0"
+    },
+    "devDependencies": {        
+        "parcel-bundler": "^1.12.5",
+        "parcel-plugin-wasm-blob": "^1.0.0",
+        "parcel-plugin-worker-blob": "^1.0.0"
+    },
+    "browserslist": [
+        "since 2017-06"
+    ]
+}
